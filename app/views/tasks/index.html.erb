@@ -1,0 +1,10 @@
+<% @tasks.each do |task| %>
+<%= task.title %>
+<% task.details %>
+<%=task.completed %>
+<%=link_to "Details" , "tasks/#{task[:id]}"  %>
+<%= link_to "Update details" , edit_path(task.id)%>
+<%= link_to "!Destroy!" , destroy_path(task.id),method: :delete%>
+<br>
+<% end %>
+<%= link_to "Create new", new_path %>
